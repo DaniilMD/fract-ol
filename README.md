@@ -1,6 +1,6 @@
 # fract-ol
 ## Project objective
-This project is the opporunity to hone skills to use a graphics library (miniLibX in this case), to discover/use the mathematical notion of complex numbers and to take a peek at the concept of optimization in computer graphics.  
+This project is the opporunity to hone skills of using a graphics library (miniLibX in this case), to discover/use the mathematical notion of complex numbers and to take a peek at the concept of optimization in computer graphics.  
 ## Skills to acquire and use
 •	Fundamentals of C  
 •	Algorithm elaboration  
