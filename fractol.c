@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: openelop <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/08 17:28:08 by openelop          #+#    #+#             */
-/*   Updated: 2019/11/08 17:28:10 by openelop         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fractol.h"
 
 void	render(t_param *param)
@@ -61,10 +49,21 @@ int		main(int argc, char **argv)
 		&param.bpp, &param.size_line, &param.endian);
 	set_start_nums(&param);
 	render(&param);
-	mlx_hook(param.win_ptr, 2, 2, &key_press_down, (void*)&param);
-	mlx_hook(param.win_ptr, 4, 2, &mouse_usage, (void*)&param);
-	mlx_hook(param.win_ptr, 5, 2, &mouse_released, (void*)&param);
-	mlx_hook(param.win_ptr, 6, 2, &julia_changer, (void*)&param);
+
+
+
+	// mlx_hook(param.win_ptr, 2, 2, &key_press_down, (void*)&param);
+	mlx_hook(param.win_ptr, 2, 1L << 0, &key_press_down, (void*)&param);
+
+
+	// mlx_hook(param.win_ptr, 4, 2, &mouse_usage, (void*)&param);
+	// mlx_hook(param.win_ptr, 5, 2, &mouse_released, (void*)&param);
+	// mlx_hook(param.win_ptr, 6, 2, &julia_changer, (void*)&param);
+
+	mlx_hook(param.win_ptr, 4, 1L << 0, &mouse_usage, (void*)&param);
+	mlx_hook(param.win_ptr, 5, 1L << 0, &mouse_released, (void*)&param);
+	mlx_hook(param.win_ptr, 6, 1L << 0, &julia_changer, (void*)&param);
+	
 	mlx_loop(param.mlx_ptr);
 	return (0);
 }
